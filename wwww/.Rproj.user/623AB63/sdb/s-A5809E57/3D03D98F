@@ -1,0 +1,17 @@
+{
+    "contents" : "library(datasets)\ndata(\"mtcars\")\nfit<-lm(mpg~am+hp+wt,data = mtcars)\nshinyUI(pageWithSidebar(\n  headerPanel(\"Predict your car's MPG\"),\n  \n  sidebarPanel(\n    sliderInput(\"obs\",\n                \"weight of cars:\",\n                min = 1,\n                max = 6,\n                value=2,step = 0.01),\n    \n    radioButtons(\"dist\", \"Transmission type:\",\n                 c(\"Manual\" = 1,\n                   \"Automatic\" = 0\n                 )),\n    \n    numericInput(\"caption\", \"HorsePower:\",100),\n    \n    submitButton(\"Calculate\")\n    \n  ),\n  \n  \n  mainPanel(\n    verbatimTextOutput(\"distPlot\"),\n    plotOutput(\"pl\",plot(mtcars$mpg,mtcars$wt),width = \"400px\",height = \"400px\"),\n    helpText(\"This application used to calculate the miles per gallon of your car ,you could input three value\"),\n    helpText(\"1.Weight of your car\"),\n    helpText(\"2.Your cars Transmission type\"),\n    helpText(\"3.Horse power of your car\\n\"),\n    helpText(\"After you Input all value,you could click the \\\"calculate\\\" button\"),\n    helpText(\"Then the result will appear on the right top coner\"),\n    helpText(\"The picture above show a relationship between wt and mpg\")\n    \n  )\n)\n)",
+    "created" : 1443286851455.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4278032021",
+    "id" : "3D03D98F",
+    "lastKnownWriteTime" : 1443286917,
+    "path" : "~/Desktop/coursera/lecture_video/Developing Data Products/www/wwww/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

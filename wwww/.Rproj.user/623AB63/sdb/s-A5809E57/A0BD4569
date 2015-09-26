@@ -1,0 +1,17 @@
+{
+    "contents" : "library(datasets);\nlibrary(ggplot2)\ndata(\"mtcars\")\nfit<-lm(mpg~am+hp+wt,data = mtcars)\nshinyServer(\n  \n  function(input, output) {\n    \n    output$distPlot<-renderPrint(34.00287512*as.numeric({input$dist})+2.08371013*(1-as.numeric({input$dist}))-0.03747873*as.numeric({input$caption})-2.87857541*as.numeric({input$obs}))\n    g<-ggplot(data = mtcars,aes(wt,mpg))+geom_point()\n    output$pl<-renderPlot(g)\n  }\n)",
+    "created" : 1443286851657.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1467954336",
+    "id" : "A0BD4569",
+    "lastKnownWriteTime" : 1443286890,
+    "path" : "~/Desktop/coursera/lecture_video/Developing Data Products/www/wwww/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
